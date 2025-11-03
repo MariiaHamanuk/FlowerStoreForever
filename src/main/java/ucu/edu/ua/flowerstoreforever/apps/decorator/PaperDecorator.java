@@ -1,19 +1,17 @@
 package ucu.edu.ua.flowerstoreforever.apps.decorator;
 
-import ucu.edu.ua.flowerstoreforever.apps.flower.Flower;
-
 public class PaperDecorator extends ItemDecorator {
-    public PaperDecorator(Flower flower) {
-        super(flower);
+    public PaperDecorator(Item item) {
+        super(item);
     }
 
     @Override
-    public double getPrice(){
-        return item.getPrice() * 2;
+    public double getPrice() {
+        return super.getPrice() + 10.0; // Add paper price
     }
-    
+
     @Override
     public String getDescription() {
-        return item.getName()  + " is in paper!";
+        return super.getDescription() + " is in paper!";
     }
 }

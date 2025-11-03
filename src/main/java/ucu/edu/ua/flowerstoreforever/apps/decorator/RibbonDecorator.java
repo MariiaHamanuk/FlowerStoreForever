@@ -1,19 +1,17 @@
 package ucu.edu.ua.flowerstoreforever.apps.decorator;
 
-import ucu.edu.ua.flowerstoreforever.apps.flower.Flower;
-
 public class RibbonDecorator extends ItemDecorator {
-    public RibbonDecorator(Flower flower) {
-        super(flower);
+    public RibbonDecorator(Item item) {
+        super(item);
     }
 
     @Override
-    public double getPrice(){
-        return item.getPrice() * 1.5;
+    public double getPrice() {
+        return super.getPrice() + 5.0; // Add ribbon price
     }
-    
+
     @Override
     public String getDescription() {
-        return item.getName()  + " is in ribbon!";
+        return super.getDescription() + " is in ribbon!";
     }
 }

@@ -9,27 +9,50 @@ import jakarta.persistence.Table;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+// Import the Item interface
+import ucu.edu.ua.flowerstoreforever.apps.decorator.Item;
+
 @Data
 @NoArgsConstructor
 @Entity
-@Table(name = "Flowers") // This matches your DBeaver screenshot
-public class Flower {
+@Table(name = "Flowers")
+public class Flower implements Item { // This "implements Item" is correct
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    // This is a String, not a FlowerType Enum
     @Column(name = "name")
     private String name;
 
-    // This is a String, not a FlowerColor Enum
     @Column(name = "color")
-    private String color;
+    private String color;   
 
     @Column(name = "price")
     private double price;
     
     @Column(name = "quantity")
     private int quantity;
+
+    // --- THIS IS THE FIX ---
+    // Manually add the setters your test needs
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+    // -----------------------
+
+    // --- Methods from your last fix ---
+    @Override
+    public double getPrice() {
+        return this.price;
+    }
+
+    @Override
+    public String getDescription() {
+        return this.name;
+    }
 }
