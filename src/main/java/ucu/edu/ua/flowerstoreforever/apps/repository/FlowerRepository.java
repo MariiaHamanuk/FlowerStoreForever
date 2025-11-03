@@ -8,5 +8,5 @@ import ucu.edu.ua.flowerstoreforever.apps.flower.Flower;
 
 @Repository
 public interface FlowerRepository extends JpaRepository<Flower, Repository>{
-    
+
 }

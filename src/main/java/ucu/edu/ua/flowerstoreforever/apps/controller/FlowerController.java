@@ -21,7 +21,7 @@ public class FlowerController {
     public FlowerController(FlowerService flowerService){
         this.flowerService = flowerService;
     }
-    @GetMapping
+    @GetMapping("api/v1")
     public List<Flower> getFlowers(){
         return flowerService.getFlowers();
     }

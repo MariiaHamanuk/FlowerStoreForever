@@ -20,14 +20,14 @@ import lombok.Setter;
 @Setter
 @Getter
 @Entity
-@Table(name = "flowers")
+@Table(name = "postgres")
 public class Flower{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
-    private double sepalLength;
-    private FlowerColor color;
-    private double price;
     private FlowerType flowerType;
+    private FlowerColor color;
+    private double sepalLength;
+    private double price;
 }
