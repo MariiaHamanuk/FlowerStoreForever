@@ -14,18 +14,24 @@ import ucu.edu.ua.flowerstoreforever.apps.service.FlowerService;
 
 
 @RestController
-@RequestMapping("/api/v1")
+// 1. Set the base URL for BOTH requests
+@RequestMapping("/api/v1/flowers") 
 public class FlowerController {
     private FlowerService flowerService;
+
     @Autowired
     public FlowerController(FlowerService flowerService){
         this.flowerService = flowerService;
     }
-    @GetMapping("api/v1")
+
+    // 2. This is now GET /api/v1/flowers
+    @GetMapping
     public List<Flower> getFlowers(){
         return flowerService.getFlowers();
     }
-    @PostMapping("/flower")
+
+    // 3. This is now POST /api/v1/flowers
+    @PostMapping
     public Flower createFlower(@RequestBody Flower flower){
         return flowerService.createFlower(flower);
     }

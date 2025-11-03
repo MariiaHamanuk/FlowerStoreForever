@@ -14,6 +14,6 @@ public class BasketDecorator extends ItemDecorator {
     
     @Override
     public String getDescription() {
-        return item.getFlowerType() + " is in basket!";
+        return item.getName() + " is in basket!";
     }
 }

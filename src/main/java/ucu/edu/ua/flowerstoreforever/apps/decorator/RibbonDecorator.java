@@ -14,6 +14,6 @@ public class RibbonDecorator extends ItemDecorator {
     
     @Override
     public String getDescription() {
-        return item.getFlowerType()  + " is in ribbon!";
+        return item.getName()  + " is in ribbon!";
     }
 }
